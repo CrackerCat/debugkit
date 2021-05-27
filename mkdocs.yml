@@ -1,9 +1,9 @@
-site_name: DebugKit
+site_name: debugKit
 site_author: drake
-site_description: DebugKit document
+site_description: debugkit - Android调试工具
 copyright: Copyright &copy; 2018 - 2020 Drake
 
-repo_name: DebugKit
+repo_name: GitHub
 repo_url: https://github.com/liangjingkanji/debugkit
 
 extra_css:

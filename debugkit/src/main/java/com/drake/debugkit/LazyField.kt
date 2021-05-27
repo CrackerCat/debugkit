@@ -25,7 +25,7 @@ import kotlin.reflect.KProperty
  * 等效于[lazy], 但是可以获取委托字段属性
  */
 @Suppress("UNCHECKED_CAST")
-fun <T, V> T.lazyField(block: T.(KProperty<*>) -> V) = object : ReadWriteProperty<T, V> {
+internal fun <T, V> T.lazyField(block: T.(KProperty<*>) -> V) = object : ReadWriteProperty<T, V> {
     @Volatile
     private var value: V? = null
     override fun getValue(thisRef: T, property: KProperty<*>): V {

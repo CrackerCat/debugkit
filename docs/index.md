@@ -2,7 +2,7 @@
 
 ## 创建并显示调试窗口
 
-<img src="https://i.imgur.com/9V87YJi.png" width="250"/>
+<img src="https://i.loli.net/2021/08/14/vqlApZjKoVdtDUX.png" width="250"/>
 
 可以在`Activity/Fragment`中使用`dev`函数即可创建并显示一个调试窗口
 

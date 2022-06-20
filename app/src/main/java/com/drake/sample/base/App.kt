@@ -24,6 +24,6 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DevTool.enabled = BuildConfig.DEBUG // 全局调试窗口显示开关
+        DevTool.debug = BuildConfig.DEBUG // 全局调试窗口显示开关
     }
 }

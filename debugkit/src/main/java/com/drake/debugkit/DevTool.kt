@@ -24,12 +24,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
-import java.util.*
 
 class DevTool(val activity: FragmentActivity) : LifecycleObserver {
 
     companion object {
-        var enabled = true // 是否显示调试窗口
+        var debug = true // 是否显示调试窗口
         var defaultX = 0F // 默认显示坐标位置
         var defaultY = 0F
         var minWidth = 132 // 最小窗口宽度
@@ -42,6 +41,7 @@ class DevTool(val activity: FragmentActivity) : LifecycleObserver {
     var textSize: Int = 12
     var startX: Float? = null
     var startY: Float? = null
+    var debug: Boolean = DevTool.debug
 
     /**
      * 添加一个按钮到调试窗口
@@ -67,7 +67,7 @@ class DevTool(val activity: FragmentActivity) : LifecycleObserver {
      * 构建一个DevFragment
      */
     fun build() {
-        if (!enabled) {
+        if (!debug) {
             return
         }
         if (functions.size > 0) devFragment.setFunctionList(functions)

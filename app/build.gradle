@@ -1,15 +1,24 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
+    signingConfigs {
+        signed {
+            storeFile file("../signed")
+            storePassword "s73dfyUxkjuq"
+            keyAlias "key0"
+            keyPassword "s73dfyUxkjuq"
+        }
+    }
     defaultConfig {
         applicationId "com.hulab.debugkit.sample"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode 5
         versionName "1.0"
+        signingConfig signingConfigs.signed
     }
     buildTypes {
         release {
@@ -19,6 +28,16 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures.dataBinding = true
+    applicationVariants.all {
+        it.outputs.each { output ->
+            output.outputFileName = "${rootProject.name}.apk"
+        }
     }
 }
 
@@ -32,7 +51,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
 
-    implementation 'com.github.liangjingkanji:StatusBar:1.1.0' // 透明状态栏
+    implementation 'com.github.liangjingkanji:StatusBar:2.0.2' // 透明状态栏
+    implementation 'com.github.liangjingkanji:Engine:0.0.64'
 }
 repositories {
     mavenCentral()

@@ -16,33 +16,35 @@
 
 package com.drake.sample.ui.activity
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.drake.engine.base.EngineActivity
 import com.drake.sample.R
+import com.drake.sample.databinding.ActivityMainBinding
 import com.drake.statusbar.immersive
-import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : EngineActivity<ActivityMainBinding>(R.layout.activity_main) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        immersive(toolbar, true)
-        setSupportActionBar(toolbar)
-        toolbar.setupWithNavController(
-            nav.findNavController(),
-            AppBarConfiguration(nav_view.menu, drawer)
+    override fun initView() {
+        immersive(binding.toolbar, true)
+        setSupportActionBar(binding.toolbar)
+        val navController = findNavController(R.id.nav)
+        binding.toolbar.setupWithNavController(
+            navController,
+            AppBarConfiguration(binding.navView.menu, binding.drawer)
         )
-        nav_view.setupWithNavController(nav.findNavController())
+        binding.navView.setupWithNavController(navController)
+    }
+
+    override fun initData() {
     }
 
     override fun onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawers()
+        if (binding.drawer.isDrawerOpen(GravityCompat.START)) {
+            binding.drawer.closeDrawers()
         } else super.onBackPressed()
     }
 }

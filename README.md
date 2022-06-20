@@ -2,7 +2,11 @@
 
 <p align="center"><strong>一个调试悬浮窗</strong></p>
 
-<p align="center"><a href="http://liangjingkanji.github.io/debugkit/">使用文档</a> | <a href="https://coding-pages-bucket-3558162-8706000-16644-587721-1252757332.cos-website.ap-shanghai.myqcloud.com">备用访问</a></p>
+<p align="center">
+<a href="http://liangjingkanji.github.io/debugkit/">使用文档</a>
+| <a href="https://github.com/liangjingkanji/document/blob/master/visit-pages.md">无法访问?</a>
+| <a href="https://github.com/liangjingkanji/debugkit/releases/download/1.3.0/debugkit.apk">下载体验</a>
+</p>
 
 <p align="center">
 <a href="https://jitpack.io/#liangjingkanji/debugkit"><img src="https://jitpack.io/v/liangjingkanji/debugkit.svg"/></a>
@@ -13,15 +17,12 @@
 
 <p align="center"><img src="https://i.imgur.com/9V87YJi.png" align="center" width="250" /></p>
 
-### 功能
+## 功能
 
-- 配置按钮, 按钮数量和按钮显示文本
-- 亮色|暗色主题模式
-- 移动|关闭|最小化悬浮窗
-- 打印日志到悬浮窗上
-- Kotlin DSL
-- 悬浮窗跟随Activity/Fragment生命周期
-
+- [x] 配置多个可点击按钮
+- [x] 亮色|暗色主题模式
+- [x] 移动|关闭|最小化悬浮窗
+- [x] 悬浮窗日志打印
 
 
 <br>

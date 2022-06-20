@@ -18,7 +18,6 @@
 
 package com.drake.debugkit
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -58,9 +57,7 @@ class DevTool(val activity: FragmentActivity) : LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     private fun close(lifecycleOwner: LifecycleOwner) {
-        if (lifecycleOwner is Fragment && lifecycleOwner.isRemoving) {
-            devFragment.close()
-        }
+        devFragment.close()
     }
 
     /**

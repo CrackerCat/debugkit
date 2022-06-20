@@ -34,7 +34,7 @@ fun FragmentActivity.dev(devTool: DevTool? = null, block: DevTool.() -> Unit) {
  */
 fun Fragment.dev(devTool: DevTool? = null, block: DevTool.() -> Unit) {
     val realDev = devTool ?: DevTool(requireActivity())
-    lifecycle.addObserver(realDev)
+    viewLifecycleOwner.lifecycle.addObserver(realDev)
     realDev.block()
     realDev.build()
 }

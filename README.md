@@ -55,7 +55,7 @@ dependencyResolutionManagement {
 然后在 module 的 build.gradle 添加依赖框架
 
 ```groovy
-implementation 'com.github.liangjingkanji:debugkit:1.2.11'
+implementation 'com.github.liangjingkanji:debugkit:1.3.0'
 ```
 
 <br>

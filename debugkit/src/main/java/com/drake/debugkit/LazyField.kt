@@ -34,11 +34,15 @@ internal fun <T, V> T.lazyField(block: T.(KProperty<*>) -> V) = object : ReadWri
             if (value == null) {
                 value = block(thisRef, property)
                 value as V
-            } else value as V
+            } else {
+                value as V
+            }
         }
     }
 
     override fun setValue(thisRef: T, property: KProperty<*>, value: V) {
-        this.value = value
+        synchronized(this) {
+            this.value = value
+        }
     }
 }
